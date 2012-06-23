@@ -1,0 +1,6 @@
+.DS_Store
+prj/
+_prj/
+test/
+.svn
+node_modules
