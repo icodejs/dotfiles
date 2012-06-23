@@ -58,4 +58,6 @@ alias dird='tree -d -C'
 # Colours and print the full path prefix for each file.
 alias dirf='tree -f -C'
 
-
+# Git
+alias gi='git init'
+alias gr='git remote -v'
