@@ -1,0 +1,12 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"font_face": "Monaco",
+	"font_size": 13,
+	"highlight_line": true,
+	"mid_line_tabs": true,
+	"tab_size": 2,
+	"trim_trailing_white_space_on_save": true,
+        "alignment_prefix_chars": [
+        "+", "-", "&", "|", "<", ">", "!", "~", "%", "/", "*", ".", "||", "&&"
+    ]
+}
