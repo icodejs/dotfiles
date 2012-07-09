@@ -9,6 +9,8 @@ ZSH_THEME="robbyrussell"
 
 # Example aliases
 alias zshconfig="subl ~/.zshrc"
+alias zcon="subl ~/.zshrc"
+
 alias ohmyzsh="subl ~/.oh-my-zsh"
 alias omz="subl ~/.oh-my-zsh"
 
@@ -25,7 +27,7 @@ alias omz="subl ~/.oh-my-zsh"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -34,21 +36,31 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+# == Customize to your needs... ==
+export JAVA_HOME=/Library/Java/Home
+export CATALINA_HOME=/usr/local/tomcat/apache-tomcat-7.0.28
 
-# MacPorts Installer addition on 2011-12-14_at_14:59:43: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
 
-export NODE_PATH=/usr/local/lib/node_modules
+export MYSQL_HOME=/usr/local/mysql
+export PATH=$PATH:/usr/local/mysql/bin:/magic/jmeter/bin
 
-# Local Web server
-alias server='python -m SimpleHTTPServer'
+# Maven
+export M2_HOME=/usr/local/apache-maven/apache-maven-3.0.4
+export M2=$M2_HOME/bin
+export MAVEN_OPTS="-Xms256m -Xmx512m"
 
+
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:$M2:$JAVA_HOME/bin
+
+export CATALINA_HOME=/usr/local/tomcat/Home
+
+#SVN
+export SVN_EDITOR=subl
+
+# old PATH
+# export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
 
 # Tree
-
 # Tree with colour.
 alias dir='tree -C'
 
@@ -61,3 +73,31 @@ alias dirf='tree -f -C'
 # Git
 alias gi='git init'
 alias gr='git remote -v'
+alias gcl='git clone'
+
+# My Shortcuts
+
+# Run Local Web server
+alias serv='python -m SimpleHTTPServer'
+
+# Start an HTTP server from a directory, optionally specifying the port
+function server() {
+  local port="${1:-5050}"
+  open "http://localhost:${port}/"
+  # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
+  # And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
+  python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
+}
+
+# Go to dev folder
+alias dev='cd ~/dev'
+
+# Open in finder
+alias openf='open -a Finder'
+
+#z
+# . `brew --prefix`/etc/profile.d/z.sh
+. /usr/local/Cellar/z/1.1/etc/profile.d/z.sh
+function precmd () {
+  z --add "$(pwd -P)"
+}
