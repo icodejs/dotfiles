@@ -101,3 +101,6 @@ alias openf='open -a Finder'
 function precmd () {
   z --add "$(pwd -P)"
 }
+
+# What is my ip address
+alias ip='ifconfig | grep inet'
