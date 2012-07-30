@@ -104,3 +104,9 @@ function precmd () {
 
 # What is my ip address
 alias ip='ifconfig | grep inet'
+
+# List file in date order
+alias lst="ls -ltr"
+
+# Eclipse - Open or more instances
+alias ecl="cd /Applications/eclipse/ && open -n Eclipse.app"
