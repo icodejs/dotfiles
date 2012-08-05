@@ -112,4 +112,4 @@ alias lst="ls -ltr"
 alias ecl="cd /Applications/eclipse/ && open -n Eclipse.app"
 
 # Node.js - Start node server
-alias nodest="node server.js"
+alias ndst="node server.js"
