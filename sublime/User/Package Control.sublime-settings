@@ -1,0 +1,27 @@
+{
+	"auto_upgrade_last_run": 1344449741,
+	"installed_packages":
+	[
+		"Alignment",
+		"BracketHighlighter",
+		"Case Conversion",
+		"ColorPicker",
+		"DocBlockr",
+		"FileDiffs",
+		"Gist",
+		"jQuery",
+		"JsFormat",
+		"JsMinifier",
+		"Nodejs",
+		"nodejsLauncher",
+		"Package Control",
+		"SideBarEnhancements",
+		"SideBarGit",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"Tag",
+		"Terminal",
+		"WordHighlight",
+		"ZenCoding"
+	]
+}
