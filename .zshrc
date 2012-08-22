@@ -109,7 +109,7 @@ alias ip='ifconfig | grep inet'
 alias lst="ls -ltra"
 
 # List files in date order with tree
-alias lstr="lst && dir"
+alias lstr="lst && dirf"
 
 # Eclipse - Open or more instances
 alias ecl="cd /Applications/eclipse/ && open -n Eclipse.app"
