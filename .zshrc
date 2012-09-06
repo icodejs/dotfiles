@@ -119,3 +119,12 @@ alias nodest="node server.js"
 
 # Run site in Tomcat
 alias catrun="./catalina.sh run"
+
+# run node server via nodemon
+function nodenm() {
+  local port=${1:-4000}
+  echo "\n====================================================="
+  echo "server running on http://localhost:"$port "via nodemon"
+  echo "====================================================="
+  nodemon server.js $port
+}
