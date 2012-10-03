@@ -123,8 +123,9 @@ alias catrun="./catalina.sh run"
 # run node server via nodemon
 function nodenm() {
   local port=${1:-4000}
+  local file=${2:-server.js}
   echo "\n====================================================="
   echo "server running on http://localhost:"$port "via nodemon"
   echo "====================================================="
-  nodemon server.js $port
+  nodemon $file $port
 }
