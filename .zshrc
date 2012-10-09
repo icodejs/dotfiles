@@ -51,6 +51,8 @@ export MAVEN_OPTS="-Xms256m -Xmx512m"
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:$M2:$JAVA_HOME/bin:/usr/local/share/python
 
+export NODE_ENV=development
+
 #export CATALINA_HOME=/usr/local/tomcat/Home
 
 #SVN
