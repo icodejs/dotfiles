@@ -1,31 +1,11 @@
 {
-	"auto_complete_commit_on_tab": true,
-	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"auto_complete_commit_on_tab": false,
+	"bold_folder_labels": true,
+	"ensure_newline_at_eof_on_save": true,
+	"color_scheme": "Packages/Color Scheme - Default/SpaceCadet.tmTheme",
 	"detect_slow_plugins": false,
-	"draw_white_space": "all",
-	"file_exclude_patterns":
-	[
-		"*.pyc",
-		"*.pyo",
-		"*.exe",
-		"*.dll",
-		"*.obj",
-		"*.o",
-		"*.a",
-		"*.lib",
-		"*.so",
-		"*.dylib",
-		"*.ncb",
-		"*.sdf",
-		"*.suo",
-		"*.pdb",
-		"*.idb",
-		".DS_Store",
-		"*.class",
-		"*.psd",
-		"*.db"
-	],
-	"font_face": "Monaco",
+	"draw_white_space": "selection",
+	"font_face": "Source Code Pro",
 	"font_size": 13.0,
 	"highlight_line": true,
 	"ignored_packages":
@@ -33,13 +13,14 @@
 		"Vintage",
 		"Nodejs"
 	],
-	"line_padding_top": 3,
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
 	"mid_line_tabs": true,
 	"rulers":
 	[
-		80
+		40, 80
 	],
-	"tab_size": 2,
+	"tab_size": 4,
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
