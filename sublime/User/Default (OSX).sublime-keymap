@@ -1,2 +1,10 @@
 [
+    {
+        "keys": ["ctrl+shift+alt+f"],
+        "command": "js_format"
+    },
+    {
+        "keys": ["cmd+ctrl+a"],
+        "command": "alignment"
+    }
 ]
