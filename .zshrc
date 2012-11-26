@@ -90,7 +90,7 @@ function precmd () {
 alias ip='ifconfig | grep inet'
 
 # List file in date order
-alias lst="ls -ltra"
+alias lst="ls -al"
 
 # List files in date order with tree
 alias lstr="lst && dirf"
