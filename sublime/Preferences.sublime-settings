@@ -1,13 +1,15 @@
 {
+	"theme": "Soda Dark.sublime-theme",
+	"soda_classic_tabs": false,
 	"auto_complete_commit_on_tab": false,
 	"bold_folder_labels": true,
-	"ensure_newline_at_eof_on_save": true,
-	"color_scheme": "Packages/Color Scheme - Default/SpaceCadet.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Goldfish.tmTheme",
 	"detect_slow_plugins": false,
-	"draw_white_space": "selection",
+	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Source Code Pro",
 	"font_size": 13.0,
-	"highlight_line": true,
+	"highlight_line": false,
 	"ignored_packages":
 	[
 		"Vintage",
@@ -18,7 +20,7 @@
 	"mid_line_tabs": true,
 	"rulers":
 	[
-		40, 80
+		80
 	],
 	"tab_size": 4,
 	"translate_tabs_to_spaces": true,
