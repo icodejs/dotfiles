@@ -118,11 +118,33 @@ function nodenm() {
 alias yeoman="nocorrect yeoman"
 
 # Yeoman alias
-alias yeo="yeoman"
+alias yo="yeoman"
 
 # zsh sublime
-alias subl="st"
-alias s="st"
+alias s="subl"
 
 # update zsh profile
 alias zrefresh="source ~/.zshrc"
+
+# bash keyboard shortcuts
+function kbsh() {
+  echo "\n"
+  echo "    ~ Ctrl+A : Jump to Beginning of Line"
+  echo "    ~ Ctrl+E : Jump to End of Line"
+  echo "    ~ Ctrl+N : Go to Next Line"
+  echo "    ~ Ctrl+P : Go to Previous Line"
+  echo "    ~ Ctrl+W : Delete Previous Word"
+  echo "    ~ Ctrl+U : Delete Line from Cursor to Beginning"
+  echo "    ~ Ctrl+K : Delete Line from Cursor to End"
+  echo "    ~ Ctrl+U : Cut from Cursor to Beginning of Line"
+  echo "    ~ Ctrl+K : Cut from Cursor to End of Line"
+  echo "    ~ Ctrl+Y : Paste Previously Cut Text at Cursor"
+  echo "    ~ Ctrl+L : Clears the Screen, similar to the clear command"
+  echo "    ~ Ctrl+R : Let’s you search through previously used commands"
+  echo "    ~ Ctrl+C : Kill whatever you are running"
+  echo "    ~ Ctrl+D : Exit current shell"
+  echo "    ~ Ctrl+Z : Puts whatever you are running into a suspended background process. fg restores it"
+  echo "    ~ Ctrl+T : Swap the last two characters before the cursor"
+  echo "    ~ Esc+T  : Swap the last two words before the cursor"
+  echo "\n"
+}
