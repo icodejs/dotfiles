@@ -127,8 +127,12 @@ alias s="subl"
 alias zrefresh="source ~/.zshrc"
 
 # bash keyboard shortcuts
-function kbsh() {
-  echo "\n"
+function ks() {
+  echo
+  echo "    ============================"
+  echo "    Useful BASH keyboard shortcuts"
+  echo "    ============================"
+  echo
   echo "    ~ Ctrl+A : Jump to Beginning of Line"
   echo "    ~ Ctrl+E : Jump to End of Line"
   echo "    ~ Ctrl+N : Go to Next Line"
@@ -146,5 +150,25 @@ function kbsh() {
   echo "    ~ Ctrl+Z : Puts whatever you are running into a suspended background process. fg restores it"
   echo "    ~ Ctrl+T : Swap the last two characters before the cursor"
   echo "    ~ Esc+T  : Swap the last two words before the cursor"
-  echo "\n"
+  echo
 }
+
+# useful git command examples
+function gs() {
+  echo
+  echo "    ============================"
+  echo "    Useful Git command examples"
+  echo "    ============================"
+  echo
+  echo "    Get diff from last commit or SHA1"
+  echo "    ----------------------------"
+  echo "    git diff 78fa857 hotzone/scripts/models/carousel-model.js"
+  echo "    git diff HEAD~1 hotzone/scripts/models/carousel-model.js "
+  echo
+}
+
+############## Zeebox Scripts ##############
+
+alias ct="node carousel-test -h ~/Sites/ShowTimeAssets/hotzone -a ~/Sites/ShowTimeAPI/"
+
+############## Zeebox Scripts ##############
