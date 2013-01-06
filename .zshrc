@@ -5,7 +5,14 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+
+ZSH_THEME="blinks"
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="af-magic"
+#ZSH_THEME="agnoster"
+#ZSH_THEME="aussiegeek"
+#ZSH_THEME="fino"
+
 
 # Example aliases
 alias zshconfig="subl ~/.zshrc"
@@ -32,7 +39,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git sublime)
+plugins=(git sublime history)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -54,9 +61,7 @@ alias dird='tree -d -C'
 alias dirf='tree -f -C'
 
 # Git
-alias gi='git init'
-alias gr='git remote -v'
-alias gcl='git clone'
+alias gmt='git mergetool'
 
 # My Shortcuts
 
@@ -90,16 +95,14 @@ function precmd () {
 alias ip='ifconfig | grep inet'
 
 # List file in date order
-alias lst="ls -al"
+alias lst="echo && pwd && echo && ls -al"
 
 # List files in date order with tree
 alias lstr="lst && dirf"
 
-# Eclipse - Open or more instances
-alias ecl="cd /Applications/eclipse/ && open -n Eclipse.app"
-
 # Start Node at root (server.js)
-alias nodest="node server.js"
+alias n="node"
+alias ns="node server.js"
 
 # Run site in Tomcat
 alias catrun="./catalina.sh run"
@@ -124,7 +127,7 @@ alias yo="yeoman"
 alias s="subl"
 
 # update zsh profile
-alias zrefresh="source ~/.zshrc"
+alias zr="source ~/.zshrc"
 
 # bash keyboard shortcuts
 function ks() {
@@ -160,6 +163,26 @@ function gs() {
   echo "    Useful Git command examples"
   echo "    ============================"
   echo
+  echo "    Shortcuts"
+  echo "    ----------------------------"
+  echo "    ~ g     =   'git'"
+  echo "    ~ ga    =   'git add'"
+  echo "    ~ gst   =   'git status'"
+  echo "    ~ gss   =   'git status -s'"
+  echo "    ~ gd    =   'git diff'"
+  echo "    ~ gl    =   'git pull'"
+  echo "    ~ gp    =   'git push'"
+  echo "    ~ gmt   =   'git mergetool'"
+  echo "    ~ gco   =   'git checkout'"
+  echo "    ~ gcm   =   'git checkout master'"
+  echo "    ~ gr    =   'git remote'"
+  echo "    ~ gb    =   'git branch'"
+  echo "    ~ glg   =   'git log --stat --max-count=5'"
+  echo "    ~ glgg  =   'git log --graph --max-count=5'"
+  echo "    ~ glgga =   'git log --graph --decorate --all'"
+  echo "    ~ gm    =   'git merge'"
+  echo
+  echo "    ----------------------------"
   echo "    Get diff from last commit or SHA1"
   echo "    ----------------------------"
   echo "    git diff 78fa857 hotzone/scripts/models/carousel-model.js"
