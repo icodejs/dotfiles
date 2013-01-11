@@ -6,12 +6,12 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 
-ZSH_THEME="blinks"
+#ZSH_THEME="blinks"
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="af-magic"
 #ZSH_THEME="agnoster"
 #ZSH_THEME="aussiegeek"
-#ZSH_THEME="fino"
+ZSH_THEME="fino"
 
 
 # Example aliases
@@ -62,6 +62,7 @@ alias dirf='tree -f -C'
 
 # Git
 alias gmt='git mergetool'
+alias gct='git commit -m'
 
 # My Shortcuts
 
@@ -167,6 +168,7 @@ function gs() {
   echo "    ----------------------------"
   echo "    ~ g     =   'git'"
   echo "    ~ ga    =   'git add'"
+  echo "    ~ gct   =   'git commit -m'"
   echo "    ~ gst   =   'git status'"
   echo "    ~ gss   =   'git status -s'"
   echo "    ~ gd    =   'git diff'"
@@ -188,10 +190,12 @@ function gs() {
   echo "    git diff 78fa857 hotzone/scripts/models/carousel-model.js"
   echo "    git diff HEAD~1 hotzone/scripts/models/carousel-model.js "
   echo
+
 }
 
 ############## Zeebox Scripts ##############
 
 alias ct="node carousel-test -h ~/Sites/ShowTimeAssets/hotzone -a ~/Sites/ShowTimeAPI/"
+alias mc="nodenm 3333 app.js"
 
 ############## Zeebox Scripts ##############
