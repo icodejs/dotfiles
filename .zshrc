@@ -1,10 +1,12 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+
 
 #ZSH_THEME="blinks"
 #ZSH_THEME="robbyrussell"
@@ -18,28 +20,36 @@ ZSH_THEME="fino"
 alias zshconfig="subl ~/.zshrc"
 alias zcon="subl ~/.zshrc"
 
+
 alias ohmyzsh="subl ~/.oh-my-zsh"
 alias omz="subl ~/.oh-my-zsh"
+
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
+
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
+
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
 
+
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
+
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
+
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git sublime history)
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,25 +59,31 @@ source $ZSH/oh-my-zsh.sh
 # export PATH=$PATH:/usr/local/mysql/bin:/magic/jmeter/bin
 
 
-
 # Tree
 # Tree with colour.
 alias dir='tree -C'
 
+
 # Colour and list directories only.
 alias dird='tree -d -C'
 
+
 # Colours and print the full path prefix for each file.
 alias dirf='tree -f -C'
+
 
 # Git
 alias gmt='git mergetool'
 alias gct='git commit -m'
 
-# My Shortcuts
+
+
+
+############### My Shortcuts ###############
 
 # Run Local Web server
 alias serv='python -m SimpleHTTPServer'
+
 
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
@@ -78,11 +94,14 @@ function server() {
   python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
 
+
 # Go to dev folder
 alias dev='cd ~/dev'
 
+
 # Open in finder
 alias openf='open -a Finder'
+
 
 #z
 # . `brew --prefix`/etc/profile.d/z.sh
@@ -92,21 +111,27 @@ function precmd () {
   z --add "$(pwd -P)"
 }
 
+
 # What is my ip address
 alias ip='ifconfig | grep inet'
+
 
 # List file in date order
 alias lst="echo && pwd && echo && ls -al"
 
+
 # List files in date order with tree
 alias lstr="lst && dirf"
+
 
 # Start Node at root (server.js)
 alias n="node"
 alias ns="node server.js"
 
+
 # Run site in Tomcat
 alias catrun="./catalina.sh run"
+
 
 # run node server via nodemon
 function nodenm() {
@@ -118,17 +143,22 @@ function nodenm() {
   nodemon $file $port
 }
 
+
 # Disable auto correct for yeoman
 alias yeoman="nocorrect yeoman"
+
 
 # Yeoman alias
 alias yo="yeoman"
 
+
 # zsh sublime
 alias s="subl"
 
+
 # update zsh profile
 alias zr="source ~/.zshrc"
+
 
 # bash keyboard shortcuts
 function ks() {
@@ -156,6 +186,7 @@ function ks() {
   echo "    ~ Esc+T  : Swap the last two words before the cursor"
   echo
 }
+
 
 # useful git command examples
 function gs() {
@@ -193,9 +224,34 @@ function gs() {
 
 }
 
+
+# Set the title of terminal
+# --------------------------
+# $1 = type; 0 - both, 1 - tab, 2 - title
+# rest = text
+setTerminalText () {
+    local mode=$1 ; shift
+    echo -ne "\033]$mode;$@\007"
+}
+stt_both  () { setTerminalText 0 $@; }
+stt_tab   () { setTerminalText 1 $@; }
+stt_title () { setTerminalText 2 $@; }
+
+
 ############## Zeebox Scripts ##############
 
 alias ct="node carousel-test -h ~/Sites/ShowTimeAssets/hotzone -a ~/Sites/ShowTimeAPI/"
 alias mc="nodenm 3333 app.js"
+
+function zs() {
+  echo
+  echo "    ============================"
+  echo "    Zeebox aliases"
+  echo "    ============================"
+  echo
+  echo "    ct  =  'node carousel-test -h ~/Sites/ShowTimeAssets/hotzone -a ~/Sites/ShowTimeAPI/'"
+  echo "    mc  =  'nodenm 3333 app.js'"
+  echo
+}
 
 ############## Zeebox Scripts ##############
