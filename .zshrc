@@ -53,6 +53,7 @@ plugins=(git sublime history)
 
 source $ZSH/oh-my-zsh.sh
 
+export HISTTIMEFORMAT="%d/%m/%y %T "
 
 # MySql
 # export MYSQL_HOME=/usr/local/mysql
@@ -75,8 +76,6 @@ alias dirf='tree -f -C'
 # Git
 alias gmt='git mergetool'
 alias gct='git commit -m'
-
-
 
 
 ############### My Shortcuts ###############
@@ -134,7 +133,7 @@ alias catrun="./catalina.sh run"
 
 
 # run node server via nodemon
-function nodenm() {
+function ndm() {
   local port=${1:-4000}
   local file=${2:-server.js}
   echo "\n====================================================="
@@ -158,6 +157,12 @@ alias s="subl"
 
 # update zsh profile
 alias zr="source ~/.zshrc"
+
+# find out what process is using a port
+function wp() {
+ local port=${1}
+ lsof -i :$port
+}
 
 
 # bash keyboard shortcuts
@@ -199,21 +204,21 @@ function gs() {
   echo "    ----------------------------"
   echo "    ~ g     =   'git'"
   echo "    ~ ga    =   'git add'"
+  echo "    ~ gb    =   'git branch'"
+  echo "    ~ gcm   =   'git checkout master'"
+  echo "    ~ gco   =   'git checkout'"
   echo "    ~ gct   =   'git commit -m'"
-  echo "    ~ gst   =   'git status'"
-  echo "    ~ gss   =   'git status -s'"
   echo "    ~ gd    =   'git diff'"
   echo "    ~ gl    =   'git pull'"
-  echo "    ~ gp    =   'git push'"
-  echo "    ~ gmt   =   'git mergetool'"
-  echo "    ~ gco   =   'git checkout'"
-  echo "    ~ gcm   =   'git checkout master'"
-  echo "    ~ gr    =   'git remote'"
-  echo "    ~ gb    =   'git branch'"
   echo "    ~ glg   =   'git log --stat --max-count=5'"
   echo "    ~ glgg  =   'git log --graph --max-count=5'"
   echo "    ~ glgga =   'git log --graph --decorate --all'"
   echo "    ~ gm    =   'git merge'"
+  echo "    ~ gmt   =   'git mergetool'"
+  echo "    ~ gp    =   'git push'"
+  echo "    ~ gr    =   'git remote'"
+  echo "    ~ gss   =   'git status -s'"
+  echo "    ~ gst   =   'git status'"
   echo
   echo "    ----------------------------"
   echo "    Get diff from last commit or SHA1"
@@ -241,7 +246,7 @@ stt_title () { setTerminalText 2 $@; }
 ############## Zeebox Scripts ##############
 
 alias ct="node carousel-test -h ~/Sites/ShowTimeAssets/hotzone -a ~/Sites/ShowTimeAPI/"
-alias mc="nodenm 3333 app.js"
+alias mc="ndm 3333 app.js"
 
 function zs() {
   echo
@@ -250,8 +255,9 @@ function zs() {
   echo "    ============================"
   echo
   echo "    ct  =  'node carousel-test -h ~/Sites/ShowTimeAssets/hotzone -a ~/Sites/ShowTimeAPI/'"
-  echo "    mc  =  'nodenm 3333 app.js'"
+  echo "    mc  =  'ndm 3333 app.js'"
   echo
 }
 
 ############## Zeebox Scripts ##############
+
