@@ -7,14 +7,14 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 
+ZSH_THEME="tahir"
+#ZSH_THEME="fletcherm"
 
 #ZSH_THEME="blinks"
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="af-magic"
 #ZSH_THEME="agnoster"
-#ZSH_THEME="aussiegeek"
-ZSH_THEME="fino"
-
+#ZSH_THEME="fino"
 
 # Example aliases
 alias zshconfig="subl ~/.zshrc"
@@ -75,7 +75,9 @@ alias dirf='tree -f -C'
 
 # Git
 alias gmt='git mergetool'
-alias gct='git commit -m'
+alias gct='git commit -v'
+
+
 
 
 ############### My Shortcuts ###############
@@ -207,7 +209,7 @@ function gs() {
   echo "    ~ gb    =   'git branch'"
   echo "    ~ gcm   =   'git checkout master'"
   echo "    ~ gco   =   'git checkout'"
-  echo "    ~ gct   =   'git commit -m'"
+  echo "    ~ gct   =   'git commit -v'"
   echo "    ~ gd    =   'git diff'"
   echo "    ~ gl    =   'git pull'"
   echo "    ~ glg   =   'git log --stat --max-count=5'"
@@ -226,7 +228,6 @@ function gs() {
   echo "    git diff 78fa857 hotzone/scripts/models/carousel-model.js"
   echo "    git diff HEAD~1 hotzone/scripts/models/carousel-model.js "
   echo
-
 }
 
 
@@ -245,7 +246,7 @@ stt_title () { setTerminalText 2 $@; }
 
 ############## Zeebox Scripts ##############
 
-alias ct="node carousel-test -h ~/Sites/ShowTimeAssets/hotzone -a ~/Sites/ShowTimeAPI/"
+alias ct="node carousel-test -h ~/Sites/carousel/public -a ~/Sites/ShowTimeAPI/"
 alias mc="ndm 3333 app.js"
 
 function zs() {
@@ -254,7 +255,7 @@ function zs() {
   echo "    Zeebox aliases"
   echo "    ============================"
   echo
-  echo "    ct  =  'node carousel-test -h ~/Sites/ShowTimeAssets/hotzone -a ~/Sites/ShowTimeAPI/'"
+  echo "    ct  =  'node carousel-test -h ~/Sites/carousel/public -a ~/Sites/openbox/api'"
   echo "    mc  =  'ndm 3333 app.js'"
   echo
 }

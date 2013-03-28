@@ -1,20 +1,27 @@
 {
-	"theme": "Soda Dark.sublime-theme",
-	"soda_classic_tabs": false,
 	"auto_complete_commit_on_tab": false,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Color Scheme - Default/Goldfish.tmTheme",
+	"caret_style": "wide",
+	"color_scheme": "Packages/Color Scheme - Default/Blackboard.tmTheme",
 	"detect_slow_plugins": false,
-	"draw_white_space": "all",
+	"dictionary": "Packages/Language - English/en_GB.dic",
+	"draw_centered": true,
+	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Source Code Pro",
-	"font_size": 13.0,
+	"font_size": 11.0,
+	"gutter": false,
 	"highlight_line": false,
 	"ignored_packages":
 	[
 		"Vintage",
 		"Nodejs"
 	],
+	"indent_guide_options":
+	[
+		"draw_active"
+	],
+	"line_numbers": true,
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
 	"mid_line_tabs": true,
@@ -22,9 +29,15 @@
 	[
 		80
 	],
+	"scroll_past_end": true,
+	"soda_classic_tabs": false,
+	"spell_check": false,
 	"tab_size": 4,
+	"theme": "Soda Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": false
+	"use_simple_full_screen": false,
+	"word_wrap": true,
+	"wrap_width": 100
 }
