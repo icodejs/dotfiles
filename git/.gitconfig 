@@ -1,0 +1,27 @@
+[user]
+    name = Tahir J
+    email = icodejs@gmail.com
+[credential]
+    helper = osxkeychain
+[core]
+    quotepath = false
+    excludesfile = /Users/Tahir/.gitignore_global
+    editor = subl -w
+[mergetool]
+    keepBackup = false
+[color]
+    ui = auto
+[branch]
+    autosetuprebase = always
+[branch "master"]
+    rebase = true
+[merge]
+    tool = sublime
+[mergetool "sublime"]
+    cmd = subl -w $MERGED
+    trustExitCode = false
+#[mergetool "diffmerge"]
+#   cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+#   trustExitCode = true
+[push]
+    default = matching
