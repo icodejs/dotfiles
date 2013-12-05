@@ -1,3 +1,4 @@
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -74,10 +75,19 @@ alias dirf='tree -f -C'
 
 
 # Git
+export PATH=/usr/local/git/bin:$PATH
+
+alias gdf='git diff --stat' # git diff with files
 alias gmt='git mergetool'
 alias gct='git commit -v'
+alias gch='git commit -v -c HEAD'
+alias glol='git log --pretty=format:"%h %s" --graph'
+alias gll="git log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
+alias gbd='for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r'
 
 
+# n
+export PATH=/usr/local/bin/n:$PATH
 
 
 ############### My Shortcuts ###############
@@ -123,6 +133,9 @@ alias lst="echo && pwd && echo && ls -al"
 
 # List files in date order with tree
 alias lstr="lst && dirf"
+
+# Touch - Create file
+alias t="touch"
 
 
 # Start Node at root (server.js)
@@ -211,7 +224,10 @@ function gs() {
   echo "    ~ gco   =   'git checkout'"
   echo "    ~ gct   =   'git commit -v'"
   echo "    ~ gd    =   'git diff'"
+  echo "    ~ gdf   =   'git diff --stat'"
   echo "    ~ gl    =   'git pull'"
+  echo "    ~ glol  =   'git log --pretty=format:"%h %s" --graph'"
+  echo "    ~ gll   =   'git log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)"
   echo "    ~ glg   =   'git log --stat --max-count=5'"
   echo "    ~ glgg  =   'git log --graph --max-count=5'"
   echo "    ~ glgga =   'git log --graph --decorate --all'"
@@ -244,6 +260,13 @@ stt_tab   () { setTerminalText 1 $@; }
 stt_title () { setTerminalText 2 $@; }
 
 
+# NVM - Node Version Manager
+# https://github.com/creationix/nvm
+# --------------------------
+source ~/.nvm/nvm.sh
+[[ -s /Users/Tahir/.nvm/nvm.sh ]] && . /Users/Tahir/.nvm/nvm.sh # This loads NVM
+
+
 ############## Zeebox Scripts ##############
 
 alias ct="node carousel-test -h ~/Sites/carousel/public -a ~/Sites/ShowTimeAPI/"
@@ -259,6 +282,4 @@ function zs() {
   echo "    mc  =  'ndm 3333 app.js'"
   echo
 }
-
-############## Zeebox Scripts ##############
 
