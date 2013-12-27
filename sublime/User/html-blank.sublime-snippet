@@ -4,13 +4,15 @@
 <html>
   <head>
    <meta charset='utf-8'>
-    <title>$0</title>
+    <title>${1:title}</title>
   </head>
   <body>
-    <h1></h1>
-  <script>
-
-  </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+        ${2:jQuery}(function () {
+          ${3}
+        });
+    </script>
   </body>
 </html>
 ]]></content>

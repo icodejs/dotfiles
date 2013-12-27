@@ -2,27 +2,27 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>name</key>
-	<string>Blackboard</string>
 	<key>author</key>
 	<string>Domenico Carbotta</string>
+	<key>name</key>
+	<string>LAZY</string>
 	<key>settings</key>
 	<array>
 		<dict>
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#0C1021</string>
+				<string>#FFFFFF</string>
 				<key>caret</key>
-				<string>#FFFFFFA6</string>
+				<string>#7C7C7C</string>
 				<key>foreground</key>
-				<string>#F8F8F8</string>
+				<string>#000000</string>
 				<key>invisibles</key>
-				<string>#FFFFFF40</string>
+				<string>#B6B6B6</string>
 				<key>lineHighlight</key>
-				<string>#FFFFFF0F</string>
+				<string>#EFFCA68F</string>
 				<key>selection</key>
-				<string>#253B76</string>
+				<string>#E3FC8D</string>
 			</dict>
 		</dict>
 		<dict>
@@ -35,7 +35,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#AEAEAE</string>
+				<string>#8C868F</string>
 			</dict>
 		</dict>
 		<dict>
@@ -48,7 +48,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#D8FA3C</string>
+				<string>#3B5BB5</string>
 			</dict>
 		</dict>
 		<dict>
@@ -61,33 +61,33 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#FF6400</string>
+				<string>#3B5BB5</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Latex Entity</string>
+			<key>scope</key>
+			<string>text.tex.latex entity</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string></string>
+				<key>foreground</key>
+				<string>#D62A28</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>name</key>
 			<string>Keyword</string>
 			<key>scope</key>
-			<string>keyword</string>
+			<string>keyword, storage</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#FBDE2D</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Storage</string>
-			<key>scope</key>
-			<string>storage</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
-				<key>foreground</key>
-				<string>#FBDE2D</string>
+				<string>#FF7800</string>
 			</dict>
 		</dict>
 		<dict>
@@ -100,7 +100,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#61CE3C</string>
+				<string>#409B1C</string>
 			</dict>
 		</dict>
 		<dict>
@@ -113,7 +113,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#8DA6CE</string>
+				<string>#3B5BB5</string>
 			</dict>
 		</dict>
 		<dict>
@@ -137,7 +137,7 @@
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
-				<string>#AB2A1D</string>
+				<string>#990000</string>
 			</dict>
 		</dict>
 		<dict>
@@ -163,7 +163,7 @@
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
-				<string>#FF6400</string>
+				<string>#3B5BB5</string>
 			</dict>
 		</dict>
 		<dict>
@@ -176,7 +176,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#FF6400</string>
+				<string>#671EBB</string>
 			</dict>
 		</dict>
 		<dict>
@@ -189,7 +189,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#BECDE6</string>
+				<string>#3E4558</string>
 			</dict>
 		</dict>
 		<dict>
@@ -200,20 +200,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#7F90AA</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>entity.name.section</string>
-			<key>scope</key>
-			<string>entity.name.section</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
-				<key>foreground</key>
-				<string>#FFFFFF</string>
+				<string>#3A4A64</string>
 			</dict>
 		</dict>
 		<dict>
@@ -223,19 +210,21 @@
 			<string>keyword.type.variant</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string></string>
 				<key>foreground</key>
-				<string>#D5E0F3</string>
+				<string>#7F90AA</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>name</key>
 			<string>OCaml operator</string>
 			<key>scope</key>
-			<string>source.ocaml keyword.operator.symbol</string>
+			<string>source.ocaml keyword.operator</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#F8F8F8</string>
+				<string>#000000</string>
 			</dict>
 		</dict>
 		<dict>
@@ -248,7 +237,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#8DA6CE</string>
+				<string>#3B5BB5</string>
 			</dict>
 		</dict>
 		<dict>
@@ -258,15 +247,13 @@
 			<string>source.ocaml keyword.operator.symbol.prefix</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string></string>
 				<key>foreground</key>
-				<string>#8DA6CE</string>
+				<string>#3B5BB5</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>OCaml f-p infix operator</string>
+			<string>OCaml infix f-p operator</string>
 			<key>scope</key>
 			<string>source.ocaml keyword.operator.symbol.infix.floating-point</string>
 			<key>settings</key>
@@ -277,7 +264,7 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>OCaml f-p prefix operator</string>
+			<string>OCaml prefix f-p operator</string>
 			<key>scope</key>
 			<string>source.ocaml keyword.operator.symbol.prefix.floating-point</string>
 			<key>settings</key>
@@ -297,139 +284,8 @@
 				<string>underline</string>
 			</dict>
 		</dict>
-		<dict>
-			<key>name</key>
-			<string>LaTeX environment</string>
-			<key>scope</key>
-			<string>text.tex.latex meta.function.environment</string>
-			<key>settings</key>
-			<dict>
-				<key>background</key>
-				<string>#FFFFFF08</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>LaTeX environment (nested)</string>
-			<key>scope</key>
-			<string>text.tex.latex meta.function.environment meta.function.environment</string>
-			<key>settings</key>
-			<dict>
-				<key>background</key>
-				<string>#7A96FA08</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Latex support</string>
-			<key>scope</key>
-			<string>text.tex.latex support.function</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
-				<key>foreground</key>
-				<string>#FBDE2D</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>PList unquoted string</string>
-			<key>scope</key>
-			<string>source.plist string.unquoted, source.plist keyword.operator</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FFFFFF</string>
-			</dict>
-		</dict>
-
-
-		<!-- Git Gutter  -->
-		<dict>
-		  <key>name</key>
-		  <string>GitGutter deleted</string>
-		  <key>scope</key>
-		  <string>markup.deleted.git_gutter</string>
-		  <key>settings</key>
-		  <dict>
-		    <key>foreground</key>
-		    <string>#FF6400</string>
-		  </dict>
-		</dict>
-
-		<dict>
-		  <key>name</key>
-		  <string>GitGutter inserted</string>
-		  <key>scope</key>
-		  <string>markup.inserted.git_gutter</string>
-		  <key>settings</key>
-		  <dict>
-		    <key>foreground</key>
-		    <string>#61CE3C</string>
-		  </dict>
-		</dict>
-
-		<dict>
-		  <key>name</key>
-		  <string>GitGutter changed</string>
-		  <key>scope</key>
-		  <string>markup.changed.git_gutter</string>
-		  <key>settings</key>
-		  <dict>
-		    <key>foreground</key>
-		    <string>#FBDE2D</string>
-		  </dict>
-		</dict>
-
-		<!-- Diff  -->
-		<dict>
-			<key>name</key>
-			<string>diff.header</string>
-			<key>scope</key>
-			<string>meta.diff, meta.diff.header</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#AEAEAE</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>diff.deleted</string>
-			<key>scope</key>
-			<string>markup.deleted</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FF6400</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>diff.inserted</string>
-			<key>scope</key>
-			<string>markup.inserted</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#61CE3C</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>diff.changed</string>
-			<key>scope</key>
-			<string>markup.changed</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FBDE2D</string>
-			</dict>
-		</dict>
-
 	</array>
 	<key>uuid</key>
-	<string>A2C6BAA7-90D0-4147-BBF5-96B0CD92D109</string>
+	<string>A1E55FCB-3CD2-4811-9E73-D9B87419443A</string>
 </dict>
 </plist>
