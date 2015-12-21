@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+#!/bin/bash
+clear
+$1
+]]></content>
+    <tabTrigger>bash</tabTrigger>
+</snippet>
