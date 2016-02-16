@@ -1,56 +1,64 @@
-
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/tahirjoseph/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-
-ZSH_THEME="tahir"
-#ZSH_THEME="fletcherm"
-
-#ZSH_THEME="blinks"
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="af-magic"
-#ZSH_THEME="agnoster"
-#ZSH_THEME="fino"
-
-# Example aliases
-alias zshconfig="subl ~/.zshrc"
-alias zcon="subl ~/.zshrc"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="tahir2"
 
 
-alias ohmyzsh="subl ~/.oh-my-zsh"
-alias omz="subl ~/.oh-my-zsh"
-
-
-# Set to this to use case-sensitive completion
+# Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-# Comment this out to disable weekly auto-update checks
+# Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
 
-# Uncomment following line if you want to disable colors in ls
+# Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-# Uncomment following line if you want to disable autosetting terminal title.
-DISABLE_AUTO_TITLE="true"
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 plugins=(git sublime history)
 
+# User configuration
+
+alias s='subl'
+
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/tahirjoseph/.nvm/v0.10.38/bin/eslint"
+# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -58,8 +66,10 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 
 # MySql
 # export MYSQL_HOME=/usr/local/mysql
-# export PATH=$PATH:/usr/local/mysql/bin:/magic/jmeter/bin
+export PATH=$PATH:/usr/local/Cellar/mysql/5.7.10/bin
 
+alias mysql_start="mysql.server start"
+alias mysql_stop="mysql.server stop"
 
 # Tree
 # Tree with colour.
@@ -73,7 +83,6 @@ alias dird='tree -d -C'
 # Colours and print the full path prefix for each file.
 alias dirf='tree -f -C'
 
-
 # Git
 export PATH=/usr/local/git/bin:$PATH
 
@@ -86,8 +95,37 @@ alias gll="git log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Crese
 alias gbd='for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r'
 
 
-# n
-export PATH=/usr/local/bin/n:$PATH
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+
+alias zshconfig="s ~/.zshrc"
+alias zcon="s ~/.zshrc"
+
+
+alias ohmyzsh="s ~/.oh-my-zsh"
+alias omz="s ~/.oh-my-zsh"
+
+alias s="st"
 
 
 ############### My Shortcuts ###############
@@ -106,10 +144,6 @@ function server() {
 }
 
 
-# Go to dev folder
-alias dev='cd ~/dev'
-
-
 # Open in finder
 alias openf='open -a Finder'
 
@@ -117,7 +151,7 @@ alias openf='open -a Finder'
 #z
 # . `brew --prefix`/etc/profile.d/z.sh
 
-. /usr/local/Cellar/z/1.4/etc/profile.d/z.sh
+. /usr/local/Cellar/z/1.9/etc/profile.d/z.sh
 function precmd () {
   z --add "$(pwd -P)"
 }
@@ -140,34 +174,7 @@ alias t="touch"
 
 # Start Node at root (server.js)
 alias n="node"
-alias ns="node server.js"
 
-
-# Run site in Tomcat
-alias catrun="./catalina.sh run"
-
-
-# run node server via nodemon
-function ndm() {
-  local port=${1:-4000}
-  local file=${2:-server.js}
-  echo "\n====================================================="
-  echo "server running on http://localhost:"$port "via nodemon"
-  echo "====================================================="
-  nodemon $file $port
-}
-
-
-# Disable auto correct for yeoman
-alias yeoman="nocorrect yeoman"
-
-
-# Yeoman alias
-alias yo="yeoman"
-
-
-# zsh sublime
-alias s="subl"
 
 
 # update zsh profile
@@ -223,6 +230,7 @@ function gs() {
   echo "    ~ gcm   =   'git checkout master'"
   echo "    ~ gco   =   'git checkout'"
   echo "    ~ gct   =   'git commit -v'"
+  echo "    ~ gch   =   'git commit -v -c HEAD' // Contains previous commit message"
   echo "    ~ gd    =   'git diff'"
   echo "    ~ gdf   =   'git diff --stat'"
   echo "    ~ gl    =   'git pull'"
@@ -247,39 +255,9 @@ function gs() {
 }
 
 
-# Set the title of terminal
-# --------------------------
-# $1 = type; 0 - both, 1 - tab, 2 - title
-# rest = text
-setTerminalText () {
-    local mode=$1 ; shift
-    echo -ne "\033]$mode;$@\007"
-}
-stt_both  () { setTerminalText 0 $@; }
-stt_tab   () { setTerminalText 1 $@; }
-stt_title () { setTerminalText 2 $@; }
+GIT_AUTHOR_NAME=$(git config --get user.name)
+GIT_AUTHOR_EMAIL=$(git config --get user.email)
+GIT_COMMITTER_NAME="${GIT_AUTHOR_NAME}"
+GIT_COMMITTER_EMAIL="${GIT_AUTHOR_EMAIL}"
 
-
-# NVM - Node Version Manager
-# https://github.com/creationix/nvm
-# --------------------------
-source ~/.nvm/nvm.sh
-[[ -s /Users/Tahir/.nvm/nvm.sh ]] && . /Users/Tahir/.nvm/nvm.sh # This loads NVM
-
-
-############## Zeebox Scripts ##############
-
-alias ct="node carousel-test -h ~/Sites/carousel/public -a ~/Sites/ShowTimeAPI/"
-alias mc="ndm 3333 app.js"
-
-function zs() {
-  echo
-  echo "    ============================"
-  echo "    Zeebox aliases"
-  echo "    ============================"
-  echo
-  echo "    ct  =  'node carousel-test -h ~/Sites/carousel/public -a ~/Sites/openbox/api'"
-  echo "    mc  =  'ndm 3333 app.js'"
-  echo
-}
-
+export GIT_AUTHOR_NAME GIT_AUTHOR_EMAIL GIT_COMMITTER_NAME GIT_COMMITTER_EMAIL
