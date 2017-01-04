@@ -2,19 +2,45 @@
 	"added_words":
 	[
 		"dialog",
-		"Beamly"
+		"Refactor"
 	],
 	"auto_complete_commit_on_tab": false,
+	"binary_file_patterns":
+	[
+		"dist/*",
+		"node_modules/*",
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip",
+		"*.map",
+		"*.log",
+		"bundle.*",
+		"main-built.*",
+		"app/assets/javascripts/webpack/*",
+		"*/tmp/*"
+	],
 	"bold_folder_labels": true,
+	"caret_style": "phase",
 	"color_scheme": "Packages/User/SublimeLinter/Oceanic Next (SL).tmTheme",
 	"dictionary": "Packages/Language - English/en_GB.dic",
 	"draw_centered": true,
 	"draw_white_space": "selection",
-	"ensure_newline_at_eof_on_save": false,
+	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Source Code Pro Semibold",
-	"font_size": 11,
+	"font_size": 14,
 	"gutter": true,
 	"highlight_line": false,
+	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"Markdown",
@@ -32,9 +58,10 @@
 		80
 	],
 	"scroll_past_end": true,
+	"show_full_path": true,
 	"soda_classic_tabs": false,
 	"spell_check": false,
-	"tab_size": 4,
+	"tab_size": 2,
 	"theme": "Soda Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
