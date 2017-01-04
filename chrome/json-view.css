@@ -1,0 +1,69 @@
+/* Solarized colours http://www.zovirl.com/2011/07/22/solarized_cheat_sheet */
+
+body {
+  white-space: pre;
+  font-family: monospace;
+  background-color: #002b36;
+  color: #839496;
+}
+
+a {
+  color: #d33682;
+}
+
+.property {
+  font-weight: bold;
+}
+
+.type-null {
+  color: #2aa198;
+}
+
+.type-boolean {
+  color: #268bd2;
+}
+
+.type-number {
+  color: #dc322f;
+}
+
+.type-string {
+  color: #b58900;
+}
+
+.callback-function {
+  color: gray;
+}
+
+.collapser:after {
+  content: "-";
+}
+
+.collapsed > .collapser:after {
+  content: "+";
+}
+
+.ellipsis:after {
+  content: " … ";
+}
+
+.collapsible {
+  margin-left: 2em;
+}
+
+.hoverable {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 2px;
+  padding-right: 2px;
+  border-radius: 2px;
+}
+
+.hovered {
+  background-color: rgba(147, 161, 161, 0.5);  
+}
+
+.collapser {
+  padding-right: 6px;
+  padding-left: 6px;
+}
