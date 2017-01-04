@@ -2,11 +2,11 @@
   <content><![CDATA[
 if ($1) {
   $2
-}
-$3
+} $3
 ]]></content>
   <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
   <tabTrigger>iff</tabTrigger>
+  <translateTabsToSpaces>true</translateTabsToSpaces>
   <!-- Optional: Set a scope to limit where the snippet will trigger -->
   <!-- <scope>source.python</scope> -->
 </snippet>

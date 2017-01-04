@@ -51,25 +51,45 @@ ZSH_THEME="tahir2"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sublime history)
+plugins=(git sublime history osx)
 
 # User configuration
 
 alias s='subl'
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/tahirjoseph/.nvm/v0.10.38/bin/eslint"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.nvm/v0.10.38/bin/eslint"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
+source ~/.nvm/nvm.sh
+
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
-# MySql
-# export MYSQL_HOME=/usr/local/mysql
-export PATH=$PATH:/usr/local/Cellar/mysql/5.7.10/bin
 
-alias mysql_start="mysql.server start"
-alias mysql_stop="mysql.server stop"
+# Node
+export PATH=$PATH:~/.nvm/versions/node/v6.9.1/bin
+
+# Phantomjs
+export PATH=$PATH:/usr/local/bin/phantomjs
+
+# MySql
+export PATH=$PATH:/usr/local/Cellar/mysql/5.7.11/bin
+
+# Scala
+export PATH=$PATH:/usr/local/share/scala/bin
+
+# Mongodb
+export PATH=$PATH:/usr/local/Cellar/mongodb/3.2.1/bin
+
+# RVM
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
+
+
+alias mysql_start="brew services start mysql"
+alias mysql_stop="brew services stop mysql"
 
 # Tree
 # Tree with colour.
@@ -88,6 +108,7 @@ export PATH=/usr/local/git/bin:$PATH
 
 alias gdf='git diff --stat' # git diff with files
 alias gmt='git mergetool'
+alias gsp='git stash pop'
 alias gct='git commit -v'
 alias gch='git commit -v -c HEAD'
 alias glol='git log --pretty=format:"%h %s" --graph'
@@ -176,6 +197,11 @@ alias t="touch"
 alias n="node"
 
 
+# Which Aliases
+alias nbw="npm run build:watch"
+alias ntw="npm run test:watch"
+alias rs="rails s"
+
 
 # update zsh profile
 alias zr="source ~/.zshrc"
@@ -185,6 +211,10 @@ function wp() {
  local port=${1}
  lsof -i :$port
 }
+
+# zsh share history
+unsetopt inc_append_history
+unsetopt share_history
 
 
 # bash keyboard shortcuts
@@ -259,5 +289,7 @@ GIT_AUTHOR_NAME=$(git config --get user.name)
 GIT_AUTHOR_EMAIL=$(git config --get user.email)
 GIT_COMMITTER_NAME="${GIT_AUTHOR_NAME}"
 GIT_COMMITTER_EMAIL="${GIT_AUTHOR_EMAIL}"
-
-export GIT_AUTHOR_NAME GIT_AUTHOR_EMAIL GIT_COMMITTER_NAME GIT_COMMITTER_EMAIL
+AWS_ACCESS_KEY_ID="AKIAIOEKFBWZNB34NPZA"
+AWS_SECRET_ACCESS_KEY="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"
+GIT_API_TOKEN="7b1477457be5bd5f03c46d21b81fdfea3647f88e"
+export GIT_AUTHOR_NAME GIT_AUTHOR_EMAIL GIT_COMMITTER_NAME GIT_COMMITTER_EMAIL GIT_API_TOKEN AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
