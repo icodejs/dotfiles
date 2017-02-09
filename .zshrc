@@ -212,6 +212,16 @@ function wp() {
  lsof -i :$port
 }
 
+function show_icons() {
+  defaults write com.apple.finder CreateDesktop true
+  killall Finder
+}
+
+function hide_icons() {
+  defaults write com.apple.finder CreateDesktop false
+  killall Finder
+}
+
 # zsh share history
 unsetopt inc_append_history
 unsetopt share_history
