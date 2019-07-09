@@ -56,6 +56,7 @@ plugins=(git sublime history osx)
 # User configuration
 
 alias s='subl'
+alias v="code"
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.nvm/v0.10.38/bin/eslint"
 
@@ -69,6 +70,12 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 
 
 # Node
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+
 export PATH=$PATH:~/.nvm/versions/node/v6.9.1/bin
 
 # Phantomjs
@@ -83,9 +90,12 @@ export PATH=$PATH:/usr/local/share/scala/bin
 # Mongodb
 export PATH=$PATH:/usr/local/Cellar/mongodb/3.2.1/bin
 
+# VS Code
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
 # RVM
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
 
 
 alias mysql_start="brew services start mysql"
@@ -114,7 +124,7 @@ alias gch='git commit -v -c HEAD'
 alias glol='git log --pretty=format:"%h %s" --graph'
 alias gll="git log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
 alias gbd='for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r'
-
+alias gcn='git clean -fxd && yarn'
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -139,12 +149,12 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 #
 # Example aliases
 
-alias zshconfig="s ~/.zshrc"
-alias zcon="s ~/.zshrc"
+alias zshconfig="code ~/.zshrc"
+alias zcon="code ~/.zshrc"
 
 
-alias ohmyzsh="s ~/.oh-my-zsh"
-alias omz="s ~/.oh-my-zsh"
+alias ohmyzsh="code ~/.oh-my-zsh"
+alias omz="code ~/.oh-my-zsh"
 
 alias s="st"
 
@@ -198,7 +208,7 @@ alias n="node"
 
 
 # Which Aliases
-alias nbw="npm run build:watch"
+alias nbw="npm run dev"
 alias ntw="npm run test:watch"
 alias rs="rails s"
 
@@ -299,7 +309,13 @@ GIT_AUTHOR_NAME=$(git config --get user.name)
 GIT_AUTHOR_EMAIL=$(git config --get user.email)
 GIT_COMMITTER_NAME="${GIT_AUTHOR_NAME}"
 GIT_COMMITTER_EMAIL="${GIT_AUTHOR_EMAIL}"
-AWS_ACCESS_KEY_ID="AKIAIOEKFBWZNB34NPZA"
-AWS_SECRET_ACCESS_KEY="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"
-GIT_API_TOKEN="7b1477457be5bd5f03c46d21b81fdfea3647f88e"
 export GIT_AUTHOR_NAME GIT_AUTHOR_EMAIL GIT_COMMITTER_NAME GIT_COMMITTER_EMAIL GIT_API_TOKEN AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
+
+
+
+# WHICH #
+alias which_bac="cd front-end; npm run build; cd ..; git add .; git rebase --continue"
+
+
+export NODEJS_SERVER_SIDE_RENDERER_URL=http://localhost:5000
+export NODEJS_SERVER_SIDE_RENDERER_ENABLED='N'
