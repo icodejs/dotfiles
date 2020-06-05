@@ -5,8 +5,10 @@
     helper = osxkeychain
 [core]
     quotepath = false
-    excludesfile = /Users/Tahir/.gitignore_global
-    editor = subl -w
+    excludesfile = ~/.gitignore_global
+    #excludesfile = /Users/tahirjoseph/.gitignore_global
+	editor = code -n -w
+    ignorecase = true
 [mergetool]
     keepBackup = false
 [color]
@@ -16,12 +18,13 @@
 [branch "master"]
     rebase = true
 [merge]
-    tool = sublime
-[mergetool "sublime"]
-    cmd = subl -w $MERGED
+    tool = code
+[mergetool "code"]
+    cmd = code -w $MERGED
     trustExitCode = false
-#[mergetool "diffmerge"]
-#   cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
-#   trustExitCode = true
 [push]
     default = matching
+[filter "lfs"]
+	smudge = git-lfs smudge %f
+	required = true
+	clean = git-lfs clean %f
