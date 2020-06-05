@@ -114,7 +114,7 @@ alias dird='tree -d -C'
 alias dirf='tree -f -C'
 
 # Git
-export PATH=/usr/local/git/bin:$PATH
+export PATH=/usr/local/Cellar/git/2.26.2/bin:$PATH
 
 alias gdf='git diff --stat' # git diff with files
 alias gmt='git mergetool'
@@ -123,7 +123,9 @@ alias gct='git commit -v'
 alias gch='git commit -v -c HEAD'
 alias glol='git log --pretty=format:"%h %s" --graph'
 alias gll="git log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
+alias glme='gll --author="Tahir J"'
 alias gbd='for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r'
+alias gbh='gbd'
 alias gcn='git clean -fxd && yarn'
 
 # You may need to manually set your language environment
@@ -162,7 +164,7 @@ alias s="st"
 ############### My Shortcuts ###############
 
 # Run Local Web server
-alias serv='python -m SimpleHTTPServer'
+alias serve='python -m SimpleHTTPServer'
 
 
 # Start an HTTP server from a directory, optionally specifying the port
@@ -182,7 +184,7 @@ alias openf='open -a Finder'
 #z
 # . `brew --prefix`/etc/profile.d/z.sh
 
-. /usr/local/Cellar/z/1.9/etc/profile.d/z.sh
+. /usr/local/Cellar/z/1.11/etc/profile.d/z.sh
 function precmd () {
   z --add "$(pwd -P)"
 }
@@ -309,7 +311,7 @@ GIT_AUTHOR_NAME=$(git config --get user.name)
 GIT_AUTHOR_EMAIL=$(git config --get user.email)
 GIT_COMMITTER_NAME="${GIT_AUTHOR_NAME}"
 GIT_COMMITTER_EMAIL="${GIT_AUTHOR_EMAIL}"
-export GIT_AUTHOR_NAME GIT_AUTHOR_EMAIL GIT_COMMITTER_NAME GIT_COMMITTER_EMAIL GIT_API_TOKEN AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
+export GIT_AUTHOR_NAME GIT_AUTHOR_EMAIL GIT_COMMITTER_NAME GIT_COMMITTER_EMAIL
 
 
 
@@ -319,3 +321,9 @@ alias which_bac="cd front-end; npm run build; cd ..; git add .; git rebase --con
 
 export NODEJS_SERVER_SIDE_RENDERER_URL=http://localhost:5000
 export NODEJS_SERVER_SIDE_RENDERER_ENABLED='N'
+
+# Ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
