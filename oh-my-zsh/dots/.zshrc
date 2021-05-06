@@ -51,14 +51,15 @@ ZSH_THEME="tahir2"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sublime history osx)
+plugins=(git history osx)
 
 # User configuration
 
-alias s='subl'
+export ZSH_DISABLE_COMPFIX="true"
+
 alias v="code"
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.nvm/v0.10.38/bin/eslint"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -71,24 +72,14 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 
 # Node
 
+# NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+export PATH=$PATH:~/.nvm/versions/node/v15.14.0/bin
 
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
-
-export PATH=$PATH:~/.nvm/versions/node/v6.9.1/bin
-
-# Phantomjs
-export PATH=$PATH:/usr/local/bin/phantomjs
-
-# MySql
-export PATH=$PATH:/usr/local/Cellar/mysql/5.7.11/bin
-
-# Scala
-export PATH=$PATH:/usr/local/share/scala/bin
-
-# Mongodb
-export PATH=$PATH:/usr/local/Cellar/mongodb/3.2.1/bin
 
 # VS Code
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
@@ -98,8 +89,8 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
 
 
-alias mysql_start="brew services start mysql"
-alias mysql_stop="brew services stop mysql"
+# alias mysql_start="brew services start mysql"
+# alias mysql_stop="brew services stop mysql"
 
 # Tree
 # Tree with colour.
@@ -114,7 +105,7 @@ alias dird='tree -d -C'
 alias dirf='tree -f -C'
 
 # Git
-export PATH=/usr/local/Cellar/git/2.26.2/bin:$PATH
+export PATH=/usr/local/Cellar/git/2.27.0/bin:$PATH
 
 alias gdf='git diff --stat' # git diff with files
 alias gmt='git mergetool'
@@ -127,6 +118,7 @@ alias glme='gll --author="Tahir J"'
 alias gbd='for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r'
 alias gbh='gbd'
 alias gcn='git clean -fxd && yarn'
+alias gsur='git submodule update --init --recursive'
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -158,8 +150,6 @@ alias zcon="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias omz="code ~/.oh-my-zsh"
 
-alias s="st"
-
 
 ############### My Shortcuts ###############
 
@@ -184,7 +174,7 @@ alias openf='open -a Finder'
 #z
 # . `brew --prefix`/etc/profile.d/z.sh
 
-. /usr/local/Cellar/z/1.11/etc/profile.d/z.sh
+. /usr/local/Cellar/z/1.9/etc/profile.d/z.sh
 function precmd () {
   z --add "$(pwd -P)"
 }
@@ -208,11 +198,6 @@ alias t="touch"
 # Start Node at root (server.js)
 alias n="node"
 
-
-# Which Aliases
-alias nbw="npm run dev"
-alias ntw="npm run test:watch"
-alias rs="rails s"
 
 
 # update zsh profile
@@ -327,3 +312,15 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+
+# GFK
+# alias cyp="yarn ui run cypress open"
+# alias opar="opa run --watch --server --log-level debug ./opa/env/dev ./opa/policies/"
+# export GFK_GITLAB_TOKEN="aWG1Fi2HsssYEeLVhU5y"
+# export TZ=UTC
+
+# # The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/Users/tahirjoseph/cloud-sdk/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tahirjoseph/cloud-sdk/google-cloud-sdk/path.zsh.inc'; fi
+
+# # The next line enables shell command completion for gcloud.
+# if [ -f '/Users/tahirjoseph/cloud-sdk/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tahirjoseph/cloud-sdk/google-cloud-sdk/completion.zsh.inc'; fi
