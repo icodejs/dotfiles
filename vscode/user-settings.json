@@ -1,23 +1,41 @@
+// https://www.schemastore.org/json/
 {
-  "editor.minimap.enabled": false,
+  "telemetry.enableTelemetry": false,
   "workbench.colorTheme": "Material Theme Palenight High Contrast",
-  "editor.fontFamily": "SourceCodePro-Regular",
-  "editor.fontSize": 12,
-  "window.zoomLevel": 0,
-  "workbench.iconTheme": "eq-material-theme-icons-palenight",
-  "editor.tabSize": 2,
-  "files.trimTrailingWhitespace": true,
-  "editor.lineNumbers": "off",
-  "editor.renderLineHighlight": "none",
+  "editor.acceptSuggestionOnEnter": "on",
   "editor.renderWhitespace": "boundary",
-  "editor.cursorStyle": "block",
-  "editor.cursorBlinking": "solid",
+  "files.insertFinalNewline": true,
+  "editor.fontSize": 12,
+  "editor.scrollBeyondLastLine": true,
+  "window.title": "${activeEditorFull}${separator}${rootName}",
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.wordWrap": "on",
   "editor.formatOnPaste": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.snippetSuggestions": "top",
+  "editor.wordBasedSuggestions": false,
+  "editor.suggest.localityBonus": true,
+  "svelte.language-server.runtime": "/Users/tahirjoseph/.nvm/versions/node/v13.14.0/bin/node",
+  "editor.minimap.enabled": false,
+  "editor.fontFamily": "Source Code Pro Semibold",
+  "window.zoomLevel": 1,
+  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "editor.renderLineHighlight": "none",
+  "editor.cursorStyle": "block",
   "search.exclude": {
-    "**/node_modules": false,
+    "**/node_modules": true,
     "**/bower_components": true,
     "**/temp": true,
-    "**/tmp": true
+    "**/dist": true,
+    "**/coverage": true,
+    "**/build": true,
+    "**/.build": true,
+    "**/.gh-pages": true,
+    "**/tmp": true,
+    "**/oldSrc": true,
+    "**/.history": true
   },
   "files.exclude": {
     "**/.git": true,
@@ -25,51 +43,155 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    "**/.log": true
+    "**/.log": true,
+    "USE_GITIGNORE": true
   },
-  "editor.rulers": [100],
-  "search.location": "panel",
-  "editor.wordWrap": "on",
+  "editor.rulers": [
+    100
+  ],
   "terminal.integrated.rightClickBehavior": "copyPaste",
   "editor.lineHeight": 22,
   "terminal.integrated.lineHeight": 1.5,
   "editor.fontLigatures": true,
   "editor.fontWeight": "normal",
   "workbench.editor.showIcons": false,
-  "materialTheme.autoApplyIcons": false,
   "workbench.colorCustomizations": {},
-  "files.insertFinalNewline": true,
-  "npm.enableScriptExplorer": true,
   "editor.formatOnType": true,
-  "eslint.packageManager": "yarn",
   "editor.selectionHighlight": true,
-  "editor.acceptSuggestionOnEnter": "on",
-  "editor.scrollBeyondLastLine": true,
-  "window.title": "${activeEditorFull}${separator}${rootName}",
-  "editor.trimAutoWhitespace": true,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.snippetSuggestions": "top",
   "explorer.confirmDelete": false,
-  "cSpell.language": "en,en-GB",
-  "spellchecker.language": "en_GB-ise",
+  "cSpell.language": "en,en-GB,en-US",
   "editor.hover.enabled": true,
   "workbench.editor.showTabs": true,
-  "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
-  "spellchecker.documentTypes": [
-    "markdown",
-    "latex",
-    "plaintext",
-    "html",
-    "json"
-  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "prettier.singleQuote": true,
-  "prettier.trailingComma": "all",
-  "[javascript]": {
+  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.formatOnSave": true
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.suggestSelection": "recentlyUsed",
+    "editor.suggest.showKeywords": false
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown",
+    "svelte"
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.options": {
+    "env": {
+      "browser": true,
+      "jest/globals": true,
+      "es6": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2019,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "rules": {
+      "no-debugger": "off"
+    }
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "liveshare.presence": false,
+  "workbench.sideBar.location": "left",
+  "workbench.editor.decorations.colors": true,
+  "workbench.editor.decorations.badges": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "files.autoSave": "onFocusChange",
+  "editor.hover.delay": 600,
+  "cSpell.ignorePaths": [
+    "**/package-lock.json",
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "**/.git/objects/**",
+    ".vscode",
+    ".vscode-insiders",
+    "**/package.json"
+  ],
+  "search.collapseResults": "alwaysCollapse",
+  "cSpell.userWords": [
+    "Tahir",
+    "div's",
+    "tailwindcss",
+    "testid"
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "breadcrumbs.enabled": false,
+  "editor.linkedEditing": true,
+  "grunt.autoDetect": "off",
+  "gulp.autoDetect": "off",
+  "npm.runSilent": true,
+  "explorer.confirmDragAndDrop": false,
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.smoothScrolling": true,
+  "php.suggest.basic": false,
+  "search.actionsPosition": "right",
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "cypress.json"
+      ],
+      "url": "https://on.cypress.io/cypress.schema.json"
+    },
+    {
+      "fileMatch": [
+        "package.json"
+      ],
+      "url": "https://json.schemastore.org/npmpackagejsonlintrc.json"
+    },
+    {
+      "fileMatch": [
+        ".eslintrc",
+        "eslintrc.json"
+      ],
+      "url": "https://json.schemastore.org/eslintrc.json"
+    }
+  ],
+  "workbench.panel.defaultLocation": "right",
+  "quokka.automaticRestart": true,
+  "editor.cursorBlinking": "phase",
+  "cSpell.enableFiletypes": [
+    "jsx",
+    "jsx-attr",
+    "jsx-tags",
+    "todo"
+  ],
+  "gitlens.views.repositories.showContributors": true
 }
