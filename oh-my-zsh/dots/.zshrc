@@ -6,8 +6,7 @@ export ZSH=/Users/tahirjoseph/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="tahir2"
-
+ZSH_THEME="tahir3"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -29,7 +28,7 @@ ZSH_THEME="tahir2"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -51,7 +50,7 @@ ZSH_THEME="tahir2"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git history osx)
+plugins=(git history macos vscode git-prompt k)
 
 # User configuration
 
@@ -59,35 +58,58 @@ export ZSH_DISABLE_COMPFIX="true"
 
 alias v="code"
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:"
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:$PATH
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/.nvm/nvm.sh
+# RVM
 
 export HISTTIMEFORMAT="%d/%m/%y %T "
-
 
 # Node
 
 # NVM
+source ~/.nvm/nvm.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-export PATH=$PATH:~/.nvm/versions/node/v15.14.0/bin
 
+# Calling nvm use automatically in a directory with a .nvmrc file
+# Put this into your $HOME/.zshrc to call nvm use automatically whenever you enter a directory that contains an .nvmrc file with a string telling nvm which node to use:
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+      nvm use
+    fi
+  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+export PATH=$PATH:~/.nvm/versions/node/v19.7.0/bin/node
 
 # VS Code
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-# RVM
-#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
+#Jest
+export PATH="$PATH:/usr/local/bin/jest"
 
+# RVM
 
 # alias mysql_start="brew services start mysql"
 # alias mysql_stop="brew services stop mysql"
@@ -96,10 +118,8 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 # Tree with colour.
 alias dir='tree -C'
 
-
 # Colour and list directories only.
 alias dird='tree -d -C'
-
 
 # Colours and print the full path prefix for each file.
 alias dirf='tree -f -C'
@@ -114,11 +134,14 @@ alias gct='git commit -v'
 alias gch='git commit -v -c HEAD'
 alias glol='git log --pretty=format:"%h %s" --graph'
 alias gll="git log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
-alias glme='gll --author="Tahir J"'
-alias gbd='for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r'
+alias gllme='gll --author="Tahir"'
+alias glpme='git log --pretty=oneline --author="Tahir"'
+alias gbd='git branch --sort=-committerdate  # DESC'
 alias gbh='gbd'
 alias gcn='git clean -fxd && yarn'
 alias gsur='git submodule update --init --recursive'
+alias gfp='git fetch --prune'
+# alias gshs='git show stash@{0}'
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -146,16 +169,13 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 alias zshconfig="code ~/.zshrc"
 alias zcon="code ~/.zshrc"
 
-
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias omz="code ~/.oh-my-zsh"
-
 
 ############### My Shortcuts ###############
 
 # Run Local Web server
 alias serve='python -m SimpleHTTPServer'
-
 
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
@@ -170,7 +190,6 @@ function server() {
 # Open in finder
 alias openf='open -a Finder'
 
-
 #z
 # . `brew --prefix`/etc/profile.d/z.sh
 
@@ -179,14 +198,11 @@ function precmd () {
   z --add "$(pwd -P)"
 }
 
-
 # What is my ip address
 alias ip='ifconfig | grep inet'
 
-
 # List file in date order
 alias lst="echo && pwd && echo && ls -al"
-
 
 # List files in date order with tree
 alias lstr="lst && dirf"
@@ -194,11 +210,8 @@ alias lstr="lst && dirf"
 # Touch - Create file
 alias t="touch"
 
-
 # Start Node at root (server.js)
 alias n="node"
-
-
 
 # update zsh profile
 alias zr="source ~/.zshrc"
@@ -207,6 +220,16 @@ alias zr="source ~/.zshrc"
 function wp() {
  local port=${1}
  lsof -i :$port
+}
+
+function sq(){
+  local commits="${1:-2}"
+  git rebase -i HEAD~"$commits"
+}
+
+function gshs(){
+  local stash="${1:-2}"
+  git show stash@{"$stash"}
 }
 
 function show_icons() {
@@ -219,10 +242,11 @@ function hide_icons() {
   killall Finder
 }
 
+alias search="history | grep"
+
 # zsh share history
 unsetopt inc_append_history
 unsetopt share_history
-
 
 # bash keyboard shortcuts
 function ks() {
@@ -250,7 +274,6 @@ function ks() {
   echo "    ~ Esc+T  : Swap the last two words before the cursor"
   echo
 }
-
 
 # useful git command examples
 function gs() {
@@ -291,36 +314,14 @@ function gs() {
   echo
 }
 
-
 GIT_AUTHOR_NAME=$(git config --get user.name)
 GIT_AUTHOR_EMAIL=$(git config --get user.email)
 GIT_COMMITTER_NAME="${GIT_AUTHOR_NAME}"
 GIT_COMMITTER_EMAIL="${GIT_AUTHOR_EMAIL}"
 export GIT_AUTHOR_NAME GIT_AUTHOR_EMAIL GIT_COMMITTER_NAME GIT_COMMITTER_EMAIL
 
+export PATH="$PATH:$HOME/.rvm/bin"
 
 
-# WHICH #
-alias which_bac="cd front-end; npm run build; cd ..; git add .; git rebase --continue"
-
-
-export NODEJS_SERVER_SIDE_RENDERER_URL=http://localhost:5000
-export NODEJS_SERVER_SIDE_RENDERER_ENABLED='N'
-
-# Ruby
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/ruby/lib"
-export CPPFLAGS="-I/usr/local/opt/ruby/include"
-export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
-
-# GFK
-# alias cyp="yarn ui run cypress open"
-# alias opar="opa run --watch --server --log-level debug ./opa/env/dev ./opa/policies/"
-# export GFK_GITLAB_TOKEN="aWG1Fi2HsssYEeLVhU5y"
-# export TZ=UTC
-
-# # The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/Users/tahirjoseph/cloud-sdk/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tahirjoseph/cloud-sdk/google-cloud-sdk/path.zsh.inc'; fi
-
-# # The next line enables shell command completion for gcloud.
-# if [ -f '/Users/tahirjoseph/cloud-sdk/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tahirjoseph/cloud-sdk/google-cloud-sdk/completion.zsh.inc'; fi
+# Created by `pipx` on 2022-10-27 12:50:44
+export PATH="$PATH:/Users/tahirjoseph/.local/bin"
