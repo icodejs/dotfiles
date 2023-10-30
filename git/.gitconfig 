@@ -1,6 +1,9 @@
-[user]
-    name = Tahir J
-    email = icodejs@gmail.com
+[includeIf "gitdir:~/Code/Personal/"]
+path = ~/Code/Personal/.gitconfig
+
+[includeIf "gitdir:~/Code/Livetix/"]
+path = ~/Code/Livetix/.gitconfig
+
 [credential]
     helper = osxkeychain
 [core]
@@ -25,6 +28,14 @@
 [push]
     default = matching
 [filter "lfs"]
-	smudge = git-lfs smudge %f
+	smudge = git-lfs smudge -- %f
 	required = true
-	clean = git-lfs clean %f
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process
+[pull]
+	rebase = true
+
+[init]
+	defaultBranch = master
+[rerere]
+	enabled = true
