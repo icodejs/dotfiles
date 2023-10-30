@@ -39,3 +39,5 @@ path = ~/Code/Livetix/.gitconfig
 	defaultBranch = master
 [rerere]
 	enabled = true
+
+# Test
