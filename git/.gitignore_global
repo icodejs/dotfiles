@@ -4,13 +4,15 @@ xnotes
 private
 *.todo
 *.sublime-*
+
 node_modules
 dump
+storybook-static
+.history
 
 # Logs and databases #
 ######################
 *.log
-*.sql
 *.sqlite
 
 # OS generated files #
@@ -23,3 +25,12 @@ dump
 # Icon?
 ehthumbs.db
 Thumbs.db
+
+# Editor files #
+################
+*.vscode/
+*.vscode/settings.json
+*.history/
+
+.excalidraw
+.env.local
