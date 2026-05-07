@@ -3,41 +3,46 @@ path = ~/Code/Personal/.gitconfig
 
 [includeIf "gitdir:~/Code/Livetix/"]
 path = ~/Code/Livetix/.gitconfig
-
+[user]
+	name = Tahir Joseph
+	email = icodejs@gmail.com
+	signingkey = 5A50F091582AC4A1
+[commit]
+	gpgsign = true
+	verbose = true
 [credential]
-    helper = osxkeychain
+	helper = osxkeychain
 [core]
-    quotepath = false
-    excludesfile = ~/.gitignore_global
-    #excludesfile = /Users/tahirjoseph/.gitignore_global
-	editor = code -n -w
-    ignorecase = true
+	excludesfile = ~/.gitignore_global
+	editor = cursor -n -w
+	ignorecase = true
+	autocrlf = input
 [mergetool]
-    keepBackup = false
-[color]
-    ui = auto
+	keepBackup = false
+[mergetool "cursor"]
+	cmd = cursor -w $MERGED
+	trustExitCode = false
+[pull]
+	rebase = true
 [branch]
-    autosetuprebase = always
-[branch "master"]
-    rebase = true
-[merge]
-    tool = code
-[mergetool "code"]
-    cmd = code -w $MERGED
-    trustExitCode = false
-[push]
-    default = matching
+	autosetuprebase = always
+[branch "main"]
+	rebase = true
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	required = true
 	clean = git-lfs clean -- %f
 	process = git-lfs filter-process
-[pull]
-	rebase = true
-
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [rerere]
 	enabled = true
-
-# Test
+[fetch]
+	prune = true
+[diff]
+	tool = cursor
+	colorMoved = zebra
+[alias]
+	st = status -sb
+	lg = log --oneline --graph --decorate --all
+	undo = reset --soft HEAD~1
